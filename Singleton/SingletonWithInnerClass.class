@@ -1,0 +1,30 @@
+/**
+ * A different approach to create singleton with the help of static inner class.
+ * Notice the private inner static class that contains the instance of the singleton class. 
+ * When the singleton class is loaded, SingletonHelper class is not loaded into memory and only when someone calls the 
+ * getInstance method, this class gets loaded and creates the Singleton class instance.
+ * This is the most widely used approach for Singleton class as it doesn’t require synchronization
+ */
+class SingletonWithInnerCls {
+
+	// private constructor so that client can't call this
+	private SingletonWithInnerCls() {
+
+	}
+
+	private static class SingletonHelper {
+		private static final SingletonWithInnerCls INSTANCE = new SingletonWithInnerCls();
+	}
+
+	public static SingletonWithInnerCls getInstance() {
+		return SingletonHelper.INSTANCE;
+	}
+}
+
+public class SingletonWithInnerClass {
+	public static void main(String args[]) {
+		SingletonWithInnerCls instance1 = SingletonWithInnerCls.getInstance();
+		SingletonWithInnerCls instance2 = SingletonWithInnerCls.getInstance();
+		System.out.println(instance1.hashCode() == instance2.hashCode());
+	}
+}
