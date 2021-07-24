@@ -4,7 +4,7 @@
  * This work fines only in multiple threaded environment.
  * The drawback is the cost associated with synchronized. It reduces performance.
  * To avoid this extra overhead every time, double checked locking principle is used.
- * In this approach, the synchronized block is used inside the if condition with an additional check to ensure that only one instance of a singleton class is created.
+ * In this approach, the synchronized block is used inside the if condition with an additional check to ensure that only one instance of a singleton class is created
  */
 class ThreadSafeSingleton {
 
