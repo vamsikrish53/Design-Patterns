@@ -2,6 +2,7 @@
  * This is Eager initialization singleton design pattern.
  * The instance is created at the time of class loading itself.
  * The drawback in this is even though client doesn't want an instance an instance will be created while class loading itself.
+ * Also this doesn't provide any option for exception handling.
  */
 class EagerInitializationSingleton {
 
